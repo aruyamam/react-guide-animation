@@ -10,12 +10,52 @@
     top: 30%;
     left: 25%;
     width: 50%;
+    transition: all 0.6s ease-out;
 }
+
+/* .ModalOpen {
+    opacity: 1;
+    transform: translateY(0);
+} */
 
 .ModalOpen {
-    display: block;
+    animation: openModal 0.6s ease-out forwards;
 }
 
+/* .ModalClose {
+    opacity: 0;
+    transform: translateY(-100vh);
+} */
 .ModalClose {
-    display: none;
+    animation: closeModal 0.6s ease-out forwards;
+}
+
+@keyframes openModal {
+    0% {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(20vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes closeModal {
+    0% {
+        opacity: 1;
+        transform: transclateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(20vh);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
 }
